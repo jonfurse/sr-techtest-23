@@ -40,12 +40,7 @@
 <template>
   <div class="container">
     <span>Interactions by Sector</span>
-    <span>count = {{interactionsCount}}</span>
-<!--    <ul>-->
-<!--      <li v-for="item in interactionSectors" :key="item">-->
-<!--        <span>Name: {{item.name  }}   count: {{item.count}} </span>-->
-<!--      </li>-->
-<!--    </ul>-->
+    <span>Total interactions: {{interactionsCount}}</span>
     <Chart :chart-data="interactionSectors"/>
   </div>
 </template>
