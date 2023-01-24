@@ -25,8 +25,9 @@
 
     // Set chart options
     var options = {'title':'Count of interactions by sector',
-      'width':1000,
-      'height':800};
+      width: 1000,
+      height: 800,
+      pieHole: 0.4,};
       const pie_1_chart = new GoogleCharts.api.visualization.PieChart(document.getElementById('chart1'));
       pie_1_chart.draw(data, options)
     // }
