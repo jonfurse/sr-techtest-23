@@ -14,7 +14,6 @@
     props.chartData.forEach((item) => {
       rowData.push([item.name, item.count]);
     })
-    console.log(rowData[0].length)
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Sectors');
     data.addColumn('number', 'Count');
@@ -27,10 +26,11 @@
     var options = {'title':'Count of interactions by sector',
       width: 1000,
       height: 800,
-      pieHole: 0.4,};
-      const pie_1_chart = new GoogleCharts.api.visualization.PieChart(document.getElementById('chart1'));
-      pie_1_chart.draw(data, options)
-    // }
+      pieHole: 0.4
+    };
+    const pie_1_chart = new GoogleCharts.api.visualization.PieChart(document.getElementById('chart1'));
+    pie_1_chart.draw(data, options)
+
   }
 </script>
 
