@@ -1,6 +1,7 @@
 <script setup>
   import { ref, computed, onMounted } from 'vue';
   import axios from "axios";
+  import Chart from "./Chart.vue";
 
   const data = ref({
     interactions: [],
@@ -40,37 +41,11 @@
   <div class="container">
     <span>Interactions by Sector</span>
     <span>count = {{interactionsCount}}</span>
-    <ul>
-      <li v-for="item in interactionSectors" :key="item">
-        <span>Name: {{item.name  }}   count: {{item.count}} </span>
-      </li>
-    </ul>
+<!--    <ul>-->
+<!--      <li v-for="item in interactionSectors" :key="item">-->
+<!--        <span>Name: {{item.name  }}   count: {{item.count}} </span>-->
+<!--      </li>-->
+<!--    </ul>-->
+    <Chart :chart-data="interactionSectors"/>
   </div>
 </template>
-
-
-
-
-
-<!-- COUNT WORKS BUT EVERY ELEMENT INSIDE OWN ARRAY! -->
-<!--const interactionSectors = computed(() => {-->
-<!--let bySector = [];-->
-<!--let i  = data.value.interactions.reduce(function (bySector, interaction) {-->
-<!--let sectorArray = bySector[interaction['sector_id']] =-->
-<!--bySector[interaction['sector_id']] ?-->
-<!--(bySector[interaction['sector_id']]) :-->
-<!--[{-->
-<!--'name': interaction['name'],-->
-<!--'count': 0,-->
-<!--'dates': []-->
-<!--}]-->
-
-<!--sectorArray[0].dates.push( interaction['date'] )-->
-<!--sectorArray[0].count++-->
-<!--//console.log('x', sectorArray)-->
-
-<!--return bySector-->
-<!--}, [])-->
-<!--console.log('i', JSON.stringify(i))-->
-<!--return i-->
-<!--})-->
