@@ -1,6 +1,6 @@
 <script setup>
   import {GoogleCharts} from 'google-charts';
-  import {defineProps, computed, ref} from "vue";
+  import {defineProps, ref} from "vue";
 
   const props = defineProps( {
     chartData : ref([])
